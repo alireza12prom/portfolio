@@ -3,89 +3,76 @@ import Link from "next/link";
 
 export default function Home() {
   return (
-    <main className="flex min-h-screen items-center justify-center bg-[#151b20] text-[#00ff99]">
+    <main className="flex min-h-screen items-center justify-center bg-[#ffffff] text-[#000000]">
 
-      <div className="flex items-stretch gap-8 h-[500px] bg-[#222b35] border-2 border-gray-500 overflow-hidden rounded-2xl shadow-2xl">
+      <section>
 
-        {/* Description Section */}
-        <div className="flex flex-col  h-full gap-4 p-3">
-          <h1 className="text-3xl">Alireza Rezapour</h1>
+        {/* Header */}
+        <div className="flex items-stretch justify-center h-max gap-20 p-2 border-2  border-gray-600 border-dashed">
 
-          <h3>Software Engineer</h3>
-          {/* 
-          <div className="flex items-center gap-2">
-            <Image
-              src="/location-pin-icon.png"
-              height={22}
-              width={22}
-              alt="Location Pin"
-            />
+          <div className="flex flex-col space-y-1.5">
+            {/* General */}
+            <h1 className="text-4xl font-bold">Alireza Rezapour</h1>
+            <p className="text-[16px] text-black/80 max-w-max">Software Engineer / Backend Developer focused on Node.j & Golang</p>
 
-            <div className="text-base">Iran</div>
-          </div> */}
-
-          <div className="text-base text-blue-200 max-w-md">
-            Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-            Voluptate quae laborum quibusdam, corporis laudantium.
-          </div>
-
-
-          {/* Link Section */}
-          <div className="flex justify-center mt-auto gap-8 text-blue-400">
-
-            <div className="flex items-center gap-2">
-              <Image
-                src="/gmail-icon.png"
-                height={22}
-                width={22}
-                alt="Location Pin"
-              />
-
-              <Link href={""} className="underline">
-                <div className="text-base">Gmail</div>
-              </Link>
+            {/* Fact Section */}
+            <div className="grid grid-cols-2 text-[15px] gap-2 m-auto">
+              <div key={0} className="p-1 border-b-1">📍Living in: "Mashhad/Iran"</div>
+              <div key={1} className="p-1 border-b-1">😍Love: "Game, Music, Walking"</div>
+              <div key={2} className="p-1 border-b-1">🔨Working at: "Hamtapay"</div>
+              <div key={3} className="p-1 border-b-1">😠Hate: "Clean Code"</div>
             </div>
 
-            <div className="flex items-center gap-2">
-              <Image
-                src="/linkedin-icon.png"
-                height={22}
-                width={22}
-                alt="Location Pin"
-              />
+            {/* Link Section */}
+            <div className="flex justify-center gap-4 mt-auto">
+              <button className="flex items-center border-1 gap-2 text-black px-4 rounded">
+                <Image
+                  src="/assets/gmail.png"
+                  height={22}
+                  width={22}
+                  alt="Location Pin"
+                />
+                Gmail
+              </button>
 
-              <Link href={""} className="underline">
-                <div className="text-base">Linkedin</div>
-              </Link>
-            </div>
+              <button className="flex items-center border-1 gap-2 text-black px-4 py-2 rounded">
+                <Image
+                  src="/assets/phone.png"
+                  height={22}
+                  width={22}
+                  alt="Location Pin"
+                />
+                Phone
+              </button>
 
-            <div className="flex items-center gap-2">
-              <Image
-                src="/github-icon.png"
-                height={22}
-                width={22}
-                alt="Location Pin"
-              />
+              <button className="flex items-center border-1 gap-2 text-black px-4 py-2 rounded">
+                <Image
+                  src="/assets/linkedin.png"
+                  height={22}
+                  width={22}
+                  alt="Location Pin"
+                />
+                Linkedin
+              </button>
 
-              <Link href={""} className="underline">
-                <div className="text-base">Github</div>
-              </Link>
+              <button className="flex items-center border-1 gap-2 text-black px-4 py-2 rounded">
+                <Image
+                  src="/assets/github.png"
+                  height={22}
+                  width={22}
+                  alt="Github"
+                />
+                Github
+              </button>
             </div>
           </div>
 
+          <div className="rounded overflow-hidden">
+            <Image src="/avatar.png" height={200} width={200} alt="Avatar" />
+          </div>
         </div>
 
-        {/* Avatar Section */}
-        <div className="border-0">
-          <Image
-            src="/avatar.png"
-            height={400}
-            width={400}
-            alt="Avatar"
-          />
-        </div>
-
-      </div>
+      </section >
 
     </main >
   );
