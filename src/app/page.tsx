@@ -108,28 +108,58 @@ export default function Home() {
 
         {/* Skills */}
         <section className="flex flex-col gap-3 justify-center p-2 w-3xl space-y-1.5 border-gray-600 border-2 border-dashed">
-          <h3>Skills</h3>
+          <h1 className="text-xl">Skills</h1>
 
-          <div className="flex flex-wrap gap-2 text-sm">
-            <p>Languages & Frameworks:</p>
+          <div className="flex flex-col text-sm space-y-1.5">
+            <p className="text-[17px]">► Languages & Frameworks:</p>
 
-            {
-              ["javascript", "typescript", "node.js", "golang", "express.js", "nest.js", "fastify"]
-                .map((item) => {
-                  return <div className="px-1.5 py-0.5 bg-gray-900 text-white rounded hover:bg-gray-600">{item}</div>
-                })
-            }
+            <div className="flex gap-2">
+
+              {
+                //  "express"
+                [
+                  { name: "Javascript", icon: "/assets/js.png" },
+                  { name: "Typescript", icon: "/assets/ts.png" },
+                  { name: "Node.js", icon: "/assets/nodejs.png" },
+                  { name: "Golang", icon: "/assets/go.png" },
+                  { name: "Nestjs", icon: "/assets/nestjs.png" },
+                  { name: "Fastify", icon: "/assets/fastify.png" },
+                ]
+                  .map((item) => {
+                    return (
+                      <span className="flex p-2 gap-2 bg-gray-900 text-white rounded hover:bg-gray-600">
+                        <Image height={20} width={20} alt={item.name} src={item.icon}></Image>
+                        <p>{item.name}</p>
+                      </span>
+                    )
+                  })
+              }
+            </div>
           </div>
 
-          <div className="flex flex-wrap gap-2 text-sm">
-            <p>Databases:</p>
+          <div className="flex flex-col text-sm space-y-1.5">
+            <p className="text-[17px]">► Databases:</p>
 
-            {
-              ["redis", "postgresql", "mysql", "mongodb"]
-                .map((item) => {
-                  return <div className="px-1.5 py-0.5 text-sm bg-gray-900 text-white rounded hover:bg-gray-600">{item}</div>
-                })
-            }
+            <div className="flex gap-2">
+
+              {
+                [
+                  { name: "Redis", icon: "/assets/redis.png" },
+                  { name: "Mysql", icon: "/assets/mysql.png" },
+                  { name: "Postgresql", icon: "/assets/postgresql.png" },
+                  { name: "Mongodb", icon: "/assets/mongodb.png" },
+                  { name: "Influxdb", icon: "/assets/influxdb.png" }
+                ]
+                  .map((item) => {
+                    return (
+                      <span className="flex p-2 gap-2 bg-gray-900 text-white rounded hover:bg-gray-600">
+                        <Image height={20} width={20} alt={item.name} src={item.icon}></Image>
+                        <p>{item.name}</p>
+                      </span>
+                    )
+                  })
+              }
+            </div>
           </div>
 
         </section>
