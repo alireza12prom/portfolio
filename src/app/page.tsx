@@ -74,14 +74,14 @@ export default function Home() {
 
 
         {/* About Me */}
-        <section className="flex flex-col items-stretch justify-center p-2 w-3xl space-y-1.5 border-gray-600 border-2 border-dashed">
+        <section className="flex flex-col items-stretch justify-center p-2 w-3xl space-y-1.5 border-gray-600 border-0 border-dashed">
           <h1 className="text-xl">About Me</h1>
           <p className="text-black/80">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit natus fugit nobis! Rerum alias dignissimos assumenda atque eligendi rem animi quas ipsam ab? Voluptatem minima pariatur blanditiis, vero necessitatibus nemo?</p>
         </section>
 
 
         {/* Experience */}
-        <section className="flex flex-col items-stretch justify-center p-2 w-3xl space-y-1.5 border-gray-600 border-2 border-dashed">
+        <section className="flex flex-col items-stretch justify-center p-2 w-3xl space-y-1.5 border-gray-600 border-0 border-dashed">
           <h1 className="text-xl">Work Experience</h1>
 
           <div>
@@ -107,7 +107,7 @@ export default function Home() {
 
 
         {/* Skills */}
-        <section className="flex flex-col gap-3 justify-center p-2 w-3xl space-y-1.5 border-gray-600 border-2 border-dashed">
+        <section className="flex flex-col gap-3 justify-center p-2 w-3xl space-y-1.5 border-gray-600 border-0 border-dashed">
           <h1 className="text-xl">Skills</h1>
 
           <div className="flex flex-col text-sm space-y-1.5">
@@ -116,7 +116,6 @@ export default function Home() {
             <div className="flex gap-2">
 
               {
-                //  "express"
                 [
                   { name: "Javascript", icon: "/assets/js.png" },
                   { name: "Typescript", icon: "/assets/ts.png" },
@@ -162,6 +161,101 @@ export default function Home() {
             </div>
           </div>
 
+          <div className="flex flex-col text-sm space-y-1.5">
+            <p className="text-[17px]">► Messaging & Brokers:</p>
+
+            <div className="flex gap-2">
+
+              {
+                [
+                  { name: "RabbitMQ", icon: "/assets/rabbitmq.png" },
+                  { name: "NATS", icon: "/assets/n.png" },
+                  { name: "KAFKA", icon: "/assets/apache.png" },
+                ]
+                  .map((item) => {
+                    return (
+                      <span className="flex p-2 gap-2 bg-gray-900 text-white rounded">
+                        <Image height={20} width={20} alt={item.name} src={item.icon}></Image>
+                        <p>{item.name}</p>
+                      </span>
+                    )
+                  })
+              }
+            </div>
+          </div>
+
+          <div className="flex flex-col text-sm space-y-1.5">
+            <p className="text-[17px]">► Architecture:</p>
+
+            <div className="flex gap-2">
+
+              {
+                [
+                  { name: "Domain-Driven-Design", icon: "" },
+                  { name: "Microservices", icon: "" },
+                  { name: "Restful", icon: "" },
+                  { name: "System Design", icon: "" },
+                ]
+                  .map((item) => {
+                    return (
+                      <span className="flex p-2 gap-2 bg-gray-900 text-white rounded">
+                        {/* <Image height={20} width={20} alt={item.name} src={item.icon}></Image> */}
+                        <p>{item.name}</p>
+                      </span>
+                    )
+                  })
+              }
+            </div>
+          </div>
+
+          <div className="flex flex-col text-sm space-y-1.5">
+            <p className="text-[17px]">► DevOps & Infrastructure:</p>
+
+            <div className="flex gap-2">
+
+              {
+                [
+                  { name: "Docker", icon: "/assets/docker.png" },
+                  { name: "KrakenD", icon: "/assets/krakend.png" },
+                  { name: "CI/CD", icon: "/assets/github-actions.png" },
+                  { name: "Git", icon: "/assets/git.png" },
+                ]
+                  .map((item) => {
+                    return (
+                      <span className="flex p-2 gap-2 bg-gray-900 text-white rounded">
+                        <Image height={20} width={20} alt={item.name} src={item.icon}></Image>
+                        <p>{item.name}</p>
+                      </span>
+                    )
+                  })
+              }
+            </div>
+          </div>
+
+          <div className="flex flex-col text-sm space-y-1.5">
+            <p className="text-[17px]">► Monitoring & Debugging:</p>
+
+            <div className="flex gap-2">
+
+              {
+                [
+                  { name: "Grafana", icon: "/assets/grafana.png" },
+                  { name: "OpenTelemetry", icon: "/assets/open-telemetry.png" },
+                  { name: "OpenSearch", icon: "/assets/open-search.png" },
+                  { name: "GrayLog", icon: "/assets/graylog.jpg" },
+                  { name: "Signoz", icon: "/assets/signoz.png" },
+                ]
+                  .map((item) => {
+                    return (
+                      <span className="flex p-2 gap-2 bg-gray-900 text-white rounded">
+                        <Image height={20} width={20} alt={item.name} src={item.icon}></Image>
+                        <p>{item.name}</p>
+                      </span>
+                    )
+                  })
+              }
+            </div>
+          </div>
         </section>
       </section >
 
