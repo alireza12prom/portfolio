@@ -1,6 +1,4 @@
 import Image from "next/image";
-import Link from "next/link";
-
 
 const skills = [
   {
@@ -65,16 +63,6 @@ const skills = [
   }
 ]
 
-
-
-
-
-
-
-
-
-
-
 export default function Home() {
   return (
     <main className="container relative mx-auto overflow-auto md:p-16 p-4 bg-[#ffffff] text-[#000000]">
@@ -82,7 +70,7 @@ export default function Home() {
       <section className="flex flex-col items-center space-y-8">
 
         {/* Header */}
-        <div className="flex items-stretch justify-between p-2 w-3xl border-gray-600">
+        <div className="flex items-stretch justify-between p-2 w-3xl">
 
           <div className="flex flex-col space-y-1.5">
             {/* General */}
@@ -91,66 +79,84 @@ export default function Home() {
 
             {/* Fact Section */}
             <div className="grid grid-cols-2 text-[15px] gap-2 m-auto">
-              <div key={0} className="p-1 border-b-1">📍Living in: "Mashhad/Iran"</div>
-              <div key={1} className="p-1 border-b-1">😍Love: "Game, Music, Walking"</div>
-              <div key={2} className="p-1 border-b-1">🔨Working at: "Hamtapay"</div>
-              <div key={3} className="p-1 border-b-1">😠Hate: "Clean Code"</div>
+              <div className="p-1 border-b-2 cursor-pointer">📍 Based in Mashhad, Iran</div>
+              <div className="p-1 border-b-2">🎮 Interests: Gaming, Music, Walking</div>
+              <div className="p-1 border-b-2">💼 Currently at Hamtapay</div>
+              <div className="p-1 border-b-2">🛠 Always chasing better code</div>
             </div>
 
             {/* Link Section */}
-            <div className="flex justify-center gap-4 mt-auto">
-              <button className="flex items-center border-1 gap-2 text-black px-4 rounded">
+            <div className="flex gap-3 mt-auto">
+              <button title="Gmail" className="flex items-center border-2 text-black px-4 rounded hover:bg-red-200 duration-300 cursor-pointer">
                 <Image
                   src="/assets/gmail.png"
                   height={22}
                   width={22}
-                  alt="Location Pin"
+                  alt="Gmail"
                 />
-                Gmail
               </button>
 
-              <button className="flex items-center border-1 gap-2 text-black px-4 py-2 rounded">
+              <button title="Phone" className="flex items-center border-2 text-black px-4 py-2 rounded hover:bg-indigo-200 duration-300 cursor-pointer">
                 <Image
                   src="/assets/phone.png"
                   height={22}
                   width={22}
-                  alt="Location Pin"
+                  alt="Phone"
                 />
-                Phone
               </button>
 
-              <button className="flex items-center border-1 gap-2 text-black px-4 py-2 rounded">
+              <button title="LinkedIn" className="flex items-center border-2 text-black px-4 py-2 rounded hover:bg-green-200 duration-300 cursor-pointer">
                 <Image
                   src="/assets/linkedin.png"
                   height={22}
                   width={22}
-                  alt="Location Pin"
+                  alt="LinkedIn"
                 />
-                Linkedin
               </button>
 
-              <button className="flex items-center border-1 gap-2 text-black px-4 py-2 rounded">
+              <button title="Github" className="flex items-center border-2 gap-2 text-black px-4 py-2 rounded hover:bg-fuchsia-200 duration-300 cursor-pointer">
                 <Image
                   src="/assets/github.png"
                   height={22}
                   width={22}
                   alt="Github"
                 />
-                Github
+              </button>
+
+              <button title="Download CV" className="flex items-center border-2 gap-2 text-black px-4 py-2 rounded hover:bg-amber-200 duration-300 cursor-pointer">
+                <Image
+                  src="/assets/folder.png"
+                  height={22}
+                  width={22}
+                  alt="CV"
+                />
+              </button>
+
+              <button title="Medium" className="flex items-center border-2 gap-2 px-4 py-2 rounded hover:bg-blue-200 duration-300 cursor-pointer">
+                <Image
+                  src="/assets/medium.png"
+                  height={22}
+                  width={22}
+                  alt="Medium"
+                />
               </button>
             </div>
           </div>
 
-          <div className="rounded overflow-hidden">
+          <div className="rounded overflow-hidden shadow shadow-gray-700">
             <Image src="/avatar.png" height={200} width={200} alt="Avatar" />
           </div>
         </div>
 
-
         {/* About Me */}
         <section className="flex flex-col items-stretch justify-center p-2 w-3xl space-y-1.5 border-gray-600 border-0 border-dashed">
           <h1 className="text-2xl">About Me</h1>
-          <p className="text-black/80">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit natus fugit nobis! Rerum alias dignissimos assumenda atque eligendi rem animi quas ipsam ab? Voluptatem minima pariatur blanditiis, vero necessitatibus nemo?</p>
+          <p className="text-black/80">
+            I’m a backend developer with +2 years of experience designing and delivering scalable, high-performance services. My expertise spans Node.js, Golang, and microservices, with a strong focus on clean architecture, system reliability, and performance optimization. I thrive on solving complex production challenges—whether it’s reducing latency, improving deployment speed, or leading cross-team recovery efforts during outages.
+            <br />
+            <br />
+            I’ve successfully migrated monoliths to microservices, built real-time data pipelines, and authored architecture RFCs that shaped company-wide engineering standards. Beyond coding, I’m passionate about mentoring, improving workflows, and ensuring teams deliver predictably and efficiently.
+          </p>
         </section>
 
 
@@ -185,19 +191,19 @@ export default function Home() {
           <h1 className="text-2xl">Skills</h1>
 
           {
-            skills.map(({ category, items }) => {
+            skills.map(({ category, items }, i) => {
               return (
-                <div className="flex flex-col text-sm space-y-1.5">
+                <div key={i} className="flex flex-col text-sm space-y-1.5">
                   <p className="text-[17px]">▪️{category}:</p>
 
                   <div className="flex flex-wrap gap-2">
 
                     {
-                      items.map((item) => {
+                      items.map((item, i) => {
                         const hasIcon = item.icon !== "";
 
                         return (
-                          <span className="flex p-2 gap-2 bg-gray-900 text-white rounded hover:bg-gray-500 duration-150 cursor-pointer">
+                          <span key={i} className="flex p-2 gap-2 bg-gray-900 text-white rounded hover:bg-gray-500 duration-150 cursor-pointer">
                             {
                               hasIcon ?
                                 <Image height={20} width={20} alt={item.name} src={item.icon} />
