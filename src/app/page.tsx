@@ -87,59 +87,63 @@ export default function Home() {
 
             {/* Link Section */}
             <div className="flex gap-3 mt-auto">
-              <button title="Gmail" className="flex items-center border-2 text-black px-4 rounded hover:bg-red-200 duration-300 cursor-pointer">
-                <Image
-                  src="/assets/gmail.png"
-                  height={22}
-                  width={22}
-                  alt="Gmail"
-                />
-              </button>
+              <a
+                href="mailto:alireza.rezapour.me@gmail.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                title="Gmail"
+                className="flex items-center border-2 text-black px-4 rounded hover:bg-red-200 duration-300 cursor-pointer"
+              >
+                <Image src="/assets/gmail.png" height={22} width={22} alt="Gmail" />
+              </a>
 
-              <button title="Phone" className="flex items-center border-2 text-black px-4 py-2 rounded hover:bg-indigo-200 duration-300 cursor-pointer">
-                <Image
-                  src="/assets/phone.png"
-                  height={22}
-                  width={22}
-                  alt="Phone"
-                />
-              </button>
+              <a
+                href="tel:+989962496521"
+                title="Phone"
+                className="flex items-center border-2 text-black px-4 py-2 rounded hover:bg-indigo-200 duration-300 cursor-pointer"
+              >
+                <Image src="/assets/phone.png" height={22} width={22} alt="Phone" />
+              </a>
 
-              <button title="LinkedIn" className="flex items-center border-2 text-black px-4 py-2 rounded hover:bg-green-200 duration-300 cursor-pointer">
-                <Image
-                  src="/assets/linkedin.png"
-                  height={22}
-                  width={22}
-                  alt="LinkedIn"
-                />
-              </button>
+              <a
+                href="https://www.linkedin.com/in/alirezarezapour"
+                target="_blank"
+                rel="noopener noreferrer"
+                title="LinkedIn"
+                className="flex items-center border-2 text-black px-4 py-2 rounded hover:bg-green-200 duration-300 cursor-pointer"
+              >
+                <Image src="/assets/linkedin.png" height={22} width={22} alt="LinkedIn" />
+              </a>
 
-              <button title="Github" className="flex items-center border-2 gap-2 text-black px-4 py-2 rounded hover:bg-fuchsia-200 duration-300 cursor-pointer">
-                <Image
-                  src="/assets/github.png"
-                  height={22}
-                  width={22}
-                  alt="Github"
-                />
-              </button>
+              <a
+                href="https://github.com/alireza12prom"
+                target="_blank"
+                rel="noopener noreferrer"
+                title="Github"
+                className="flex items-center border-2 gap-2 text-black px-4 py-2 rounded hover:bg-fuchsia-200 duration-300 cursor-pointer"
+              >
+                <Image src="/assets/github.png" height={22} width={22} alt="Github" />
+              </a>
 
-              <button title="Download CV" className="flex items-center border-2 gap-2 text-black px-4 py-2 rounded hover:bg-amber-200 duration-300 cursor-pointer">
-                <Image
-                  src="/assets/folder.png"
-                  height={22}
-                  width={22}
-                  alt="CV"
-                />
-              </button>
+              <a
+                href="/cv.pdf" // Replace with your actual CV file path or URL
+                target="_blank"
+                rel="noopener noreferrer"
+                title="Download CV"
+                className="flex items-center border-2 gap-2 text-black px-4 py-2 rounded hover:bg-amber-200 duration-300 cursor-pointer"
+              >
+                <Image src="/assets/folder.png" height={22} width={22} alt="CV" />
+              </a>
 
-              <button title="Medium" className="flex items-center border-2 gap-2 px-4 py-2 rounded hover:bg-blue-200 duration-300 cursor-pointer">
-                <Image
-                  src="/assets/medium.png"
-                  height={22}
-                  width={22}
-                  alt="Medium"
-                />
-              </button>
+              <a
+                href="https://medium.com/@namatery"
+                target="_blank"
+                rel="noopener noreferrer"
+                title="Medium"
+                className="flex items-center border-2 gap-2 px-4 py-2 rounded hover:bg-blue-200 duration-300 cursor-pointer"
+              >
+                <Image src="/assets/medium.png" height={22} width={22} alt="Medium" />
+              </a>
             </div>
           </div>
 
