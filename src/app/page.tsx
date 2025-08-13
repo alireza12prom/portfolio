@@ -1,6 +1,80 @@
 import Image from "next/image";
 import Link from "next/link";
 
+
+const skills = [
+  {
+    category: "Languages & Frameworks",
+    items: [
+      { name: "Javascript", icon: "/assets/js.png" },
+      { name: "Typescript", icon: "/assets/ts.png" },
+      { name: "Node.js", icon: "/assets/nodejs.png" },
+      { name: "Golang", icon: "/assets/go.png" },
+      { name: "Nestjs", icon: "/assets/nestjs.png" },
+      { name: "Fastify", icon: "/assets/fastify.png" },
+    ]
+  },
+  {
+    category: "Databases",
+    items: [
+      { name: "Redis", icon: "/assets/redis.png" },
+      { name: "Mysql", icon: "/assets/mysql.png" },
+      { name: "Postgresql", icon: "/assets/postgresql.png" },
+      { name: "Mongodb", icon: "/assets/mongodb.png" },
+      { name: "Influxdb", icon: "/assets/influxdb.png" }
+    ]
+  },
+  {
+    category: "Monitoring & Debugging",
+    items: [
+      { name: "Grafana", icon: "/assets/grafana.png" },
+      { name: "OpenTelemetry", icon: "/assets/open-telemetry.png" },
+      { name: "OpenSearch", icon: "/assets/open-search.png" },
+      { name: "GrayLog", icon: "/assets/graylog.jpg" },
+      { name: "Signoz", icon: "/assets/signoz.png" },
+    ]
+  },
+  {
+    category: "DevOps & Infrastructure",
+    items: [
+      { name: "Docker", icon: "/assets/docker.png" },
+      { name: "KrakenD", icon: "/assets/krakend.png" },
+      { name: "CI/CD", icon: "/assets/github-actions.png" },
+      { name: "Git", icon: "/assets/git.png" },
+      { name: "Linux", icon: "/assets/linux.png" },
+    ]
+  },
+  {
+    category: "Architecture",
+    items: [
+      { name: "Domain-Driven-Design", icon: "" },
+      { name: "Microservices", icon: "" },
+      { name: "Restful", icon: "" },
+      { name: "System Design", icon: "" },
+      { name: "Onion Arch", icon: "" },
+      { name: "Vertical Slice Arch", icon: "" },
+    ]
+  },
+  {
+    category: "Messaging & Brokers",
+    items: [
+      { name: "RabbitMQ", icon: "/assets/rabbitmq.png" },
+      { name: "NATS", icon: "/assets/n.png" },
+      { name: "KAFKA", icon: "/assets/apache.png" },
+    ]
+  }
+]
+
+
+
+
+
+
+
+
+
+
+
 export default function Home() {
   return (
     <main className="container relative mx-auto overflow-auto md:p-16 p-4 bg-[#ffffff] text-[#000000]">
@@ -75,14 +149,14 @@ export default function Home() {
 
         {/* About Me */}
         <section className="flex flex-col items-stretch justify-center p-2 w-3xl space-y-1.5 border-gray-600 border-0 border-dashed">
-          <h1 className="text-xl">About Me</h1>
+          <h1 className="text-2xl">About Me</h1>
           <p className="text-black/80">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit natus fugit nobis! Rerum alias dignissimos assumenda atque eligendi rem animi quas ipsam ab? Voluptatem minima pariatur blanditiis, vero necessitatibus nemo?</p>
         </section>
 
 
         {/* Experience */}
         <section className="flex flex-col items-stretch justify-center p-2 w-3xl space-y-1.5 border-gray-600 border-0 border-dashed">
-          <h1 className="text-xl">Work Experience</h1>
+          <h1 className="text-2xl">Work Experience</h1>
 
           <div>
             <div className="flex items-stretch justify-between">
@@ -108,154 +182,37 @@ export default function Home() {
 
         {/* Skills */}
         <section className="flex flex-col gap-3 justify-center p-2 w-3xl space-y-1.5 border-gray-600 border-0 border-dashed">
-          <h1 className="text-xl">Skills</h1>
+          <h1 className="text-2xl">Skills</h1>
 
-          <div className="flex flex-col text-sm space-y-1.5">
-            <p className="text-[17px]">► Languages & Frameworks:</p>
+          {
+            skills.map(({ category, items }) => {
+              return (
+                <div className="flex flex-col text-sm space-y-1.5">
+                  <p className="text-[17px]">▪️{category}:</p>
 
-            <div className="flex gap-2">
+                  <div className="flex flex-wrap gap-2">
 
-              {
-                [
-                  { name: "Javascript", icon: "/assets/js.png" },
-                  { name: "Typescript", icon: "/assets/ts.png" },
-                  { name: "Node.js", icon: "/assets/nodejs.png" },
-                  { name: "Golang", icon: "/assets/go.png" },
-                  { name: "Nestjs", icon: "/assets/nestjs.png" },
-                  { name: "Fastify", icon: "/assets/fastify.png" },
-                ]
-                  .map((item) => {
-                    return (
-                      <span className="flex p-2 gap-2 bg-gray-900 text-white rounded hover:bg-gray-600">
-                        <Image height={20} width={20} alt={item.name} src={item.icon}></Image>
-                        <p>{item.name}</p>
-                      </span>
-                    )
-                  })
-              }
-            </div>
-          </div>
+                    {
+                      items.map((item) => {
+                        const hasIcon = item.icon !== "";
 
-          <div className="flex flex-col text-sm space-y-1.5">
-            <p className="text-[17px]">► Databases:</p>
-
-            <div className="flex gap-2">
-
-              {
-                [
-                  { name: "Redis", icon: "/assets/redis.png" },
-                  { name: "Mysql", icon: "/assets/mysql.png" },
-                  { name: "Postgresql", icon: "/assets/postgresql.png" },
-                  { name: "Mongodb", icon: "/assets/mongodb.png" },
-                  { name: "Influxdb", icon: "/assets/influxdb.png" }
-                ]
-                  .map((item) => {
-                    return (
-                      <span className="flex p-2 gap-2 bg-gray-900 text-white rounded hover:bg-gray-600">
-                        <Image height={20} width={20} alt={item.name} src={item.icon}></Image>
-                        <p>{item.name}</p>
-                      </span>
-                    )
-                  })
-              }
-            </div>
-          </div>
-
-          <div className="flex flex-col text-sm space-y-1.5">
-            <p className="text-[17px]">► Messaging & Brokers:</p>
-
-            <div className="flex gap-2">
-
-              {
-                [
-                  { name: "RabbitMQ", icon: "/assets/rabbitmq.png" },
-                  { name: "NATS", icon: "/assets/n.png" },
-                  { name: "KAFKA", icon: "/assets/apache.png" },
-                ]
-                  .map((item) => {
-                    return (
-                      <span className="flex p-2 gap-2 bg-gray-900 text-white rounded">
-                        <Image height={20} width={20} alt={item.name} src={item.icon}></Image>
-                        <p>{item.name}</p>
-                      </span>
-                    )
-                  })
-              }
-            </div>
-          </div>
-
-          <div className="flex flex-col text-sm space-y-1.5">
-            <p className="text-[17px]">► Architecture:</p>
-
-            <div className="flex gap-2">
-
-              {
-                [
-                  { name: "Domain-Driven-Design", icon: "" },
-                  { name: "Microservices", icon: "" },
-                  { name: "Restful", icon: "" },
-                  { name: "System Design", icon: "" },
-                ]
-                  .map((item) => {
-                    return (
-                      <span className="flex p-2 gap-2 bg-gray-900 text-white rounded">
-                        {/* <Image height={20} width={20} alt={item.name} src={item.icon}></Image> */}
-                        <p>{item.name}</p>
-                      </span>
-                    )
-                  })
-              }
-            </div>
-          </div>
-
-          <div className="flex flex-col text-sm space-y-1.5">
-            <p className="text-[17px]">► DevOps & Infrastructure:</p>
-
-            <div className="flex gap-2">
-
-              {
-                [
-                  { name: "Docker", icon: "/assets/docker.png" },
-                  { name: "KrakenD", icon: "/assets/krakend.png" },
-                  { name: "CI/CD", icon: "/assets/github-actions.png" },
-                  { name: "Git", icon: "/assets/git.png" },
-                ]
-                  .map((item) => {
-                    return (
-                      <span className="flex p-2 gap-2 bg-gray-900 text-white rounded">
-                        <Image height={20} width={20} alt={item.name} src={item.icon}></Image>
-                        <p>{item.name}</p>
-                      </span>
-                    )
-                  })
-              }
-            </div>
-          </div>
-
-          <div className="flex flex-col text-sm space-y-1.5">
-            <p className="text-[17px]">► Monitoring & Debugging:</p>
-
-            <div className="flex gap-2">
-
-              {
-                [
-                  { name: "Grafana", icon: "/assets/grafana.png" },
-                  { name: "OpenTelemetry", icon: "/assets/open-telemetry.png" },
-                  { name: "OpenSearch", icon: "/assets/open-search.png" },
-                  { name: "GrayLog", icon: "/assets/graylog.jpg" },
-                  { name: "Signoz", icon: "/assets/signoz.png" },
-                ]
-                  .map((item) => {
-                    return (
-                      <span className="flex p-2 gap-2 bg-gray-900 text-white rounded">
-                        <Image height={20} width={20} alt={item.name} src={item.icon}></Image>
-                        <p>{item.name}</p>
-                      </span>
-                    )
-                  })
-              }
-            </div>
-          </div>
+                        return (
+                          <span className="flex p-2 gap-2 bg-gray-900 text-white rounded hover:bg-gray-500 duration-150 cursor-pointer">
+                            {
+                              hasIcon ?
+                                <Image height={20} width={20} alt={item.name} src={item.icon} />
+                                : ""
+                            }
+                            <p>{item.name}</p>
+                          </span>
+                        )
+                      })
+                    }
+                  </div>
+                </div>
+              )
+            })
+          }
         </section>
       </section >
 
