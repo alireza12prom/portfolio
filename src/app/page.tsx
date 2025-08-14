@@ -61,7 +61,36 @@ const skills = [
       { name: "KAFKA", icon: "/assets/apache.png" },
     ]
   }
-]
+];
+
+const experiences = [
+  {
+    company: "Part Software Group",
+    link: 'https://partsoftware.com',
+    role: "Backend Engineer",
+    location: "Mashhad, Iran",
+    period: "Apr 2024 – Present",
+    description:
+      "As a Backend Engineer, I led cross-team recovery efforts during critical production outages, achieving a 70% reduction in MTTR. I optimized key workflows to cut latency by 60% and spearheaded the re-architecture of core services, enabling faster deployments and reduced technical debt. I also authored over 10 RFCs that influenced company-wide architecture standards and mentored new hires to streamline onboarding."
+  },
+  {
+    company: "Forvest",
+    link: 'https://forvest.io',
+    role: "Software Developer",
+    location: "Mashhad, Iran",
+    period: "Aug 2023 – Apr 2024",
+    description:
+      "At Forvest, I was responsible for architecting and executing the migration from a monolithic to a microservices architecture, reducing deployment times by 70%. I redesigned the crypto market data service to halve fetch times and implemented real-time data streaming with NATS, enabling faster AI-driven decision-making. I also built a custom CRM to improve user retention and support efficiency, and developed CI/CD pipelines to streamline releases."
+  },
+  {
+    company: "Farajahan Hashtom",
+    role: "Software Developer",
+    location: "Mashhad, Iran",
+    period: "Jan 2023 – May 2023",
+    description:
+      "I developed the full backend system from scratch using Node.js and Express, ensuring scalability and maintainability. The platform supported dual payment methods—cryptocurrency and local fiat—while implementing TOTP-based two-factor authentication for enhanced security. I also built real-time WebSocket functionality for transaction updates, improving user experience for over 5,000 users and reducing support requests by 30%."
+  }
+];
 
 export default function Home() {
   return (
@@ -165,64 +194,41 @@ export default function Home() {
 
 
         {/* Experience */}
-        <section className="flex flex-col items-stretch justify-center p-2 w-3xl space-y-1.5 border-gray-600 border-0 border-dashed">
+        <section className="flex flex-col items-stretch justify-center p-2 w-3xl gap-4 space-y-1.5 border-gray-600 border-0 border-dashed">
           <h1 className="text-2xl">Work Experience</h1>
-
-          <div>
-            <div className="flex items-stretch justify-between">
-              <h3>Part Software Group</h3>
-              <p className="text-sm text-gray-500">
-                Dec 2022
-                -
-                Feb 2024
-              </p>
-            </div>
-
-            <h4 className="font-mono text-sm text-gray-500">Software Engineer • Fulltime</h4>
-
-            <div className="flex flex-col items-stretch ml-3">
-              <p className="text-sm">⁃ Option 1</p>
-              <p className="text-sm">⁃ Option 2</p>
-              <p className="text-sm">⁃ Option 3</p>
-              <p className="text-sm">⁃ Option 4</p>
-            </div>
-          </div>
-        </section>
-
-
-        {/* Skills */}
-        <section className="flex flex-col gap-3 justify-center p-2 w-3xl space-y-1.5 border-gray-600 border-0 border-dashed">
-          <h1 className="text-2xl">Skills</h1>
-
           {
-            skills.map(({ category, items }, i) => {
+            experiences.map((ex, idx) => {
               return (
-                <div key={i} className="flex flex-col text-sm space-y-1.5">
-                  <p className="text-[17px]">▪️{category}:</p>
-
-                  <div className="flex flex-wrap gap-2">
-
-                    {
-                      items.map((item, i) => {
-                        const hasIcon = item.icon !== "";
-
-                        return (
-                          <span key={i} className="flex p-2 gap-2 bg-gray-900 text-white rounded hover:bg-gray-500 duration-150 cursor-pointer">
-                            {
-                              hasIcon ?
-                                <Image height={20} width={20} alt={item.name} src={item.icon} />
-                                : ""
-                            }
-                            <p>{item.name}</p>
-                          </span>
-                        )
-                      })
-                    }
+                <div key={idx} className="hover:bg-gray-200 rounded cursor-pointer duration-200 p-1">
+                  <div className="flex items-stretch justify-between">
+                    <a href={ex.link} target="_blank" rel="noopener noreferrer" className="flex text-lg text-blue-700 hover:underline">
+                      {ex.company}
+                    </a>
+                    <p className="text-sm text-gray-500">{ex.period}</p>
                   </div>
+
+                  <h4 className="font-mono text-sm text-gray-500">{ex.role} • {ex.location}</h4>
+                  <div className="text-sm mt-2 ml-0.5">{ex.description}</div>
                 </div>
               )
             })
           }
+        </section>
+
+
+        {/* Skills */}
+        <section className="p-4 w-3xl">
+          <h1 className="text-2xl font-semibold mb-3">Skills</h1>
+          <div className="grid sm:grid-cols-2 gap-4">
+            {skills.map(({ category, items }, i) => (
+              <div key={i}>
+                <p className="text-lg font-medium mb-2">{category}</p>
+                <p className="text-sm text-gray-700">
+                  {items.map(item => item.name).join(", ")}
+                </p>
+              </div>
+            ))}
+          </div>
         </section>
       </section >
 
