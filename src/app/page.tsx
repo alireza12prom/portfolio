@@ -65,9 +65,9 @@ const experiences = [
   {
     company: "Part Software Group",
     link: 'https://partsoftware.com',
-    role: "Backend Engineer",
+    role: "Software Engineer",
     location: "Mashhad, Iran",
-    period: "Apr 2024 – Present",
+    period: "Apr 2024 – Aug 2025",
     description:
       "As a Backend Engineer, I led cross-team recovery efforts during critical production outages, achieving a 70% reduction in MTTR. I optimized key workflows to cut latency by 60% and spearheaded the re-architecture of core services, enabling faster deployments and reduced technical debt. I also authored over 10 RFCs that influenced company-wide architecture standards and mentored new hires to streamline onboarding."
   },
@@ -92,7 +92,7 @@ const experiences = [
 
 export default function Home() {
   return (
-    <main className="container relative mx-auto overflow-auto md:p-16 p-4 bg-[#ffffff] text-[#000000]">
+    <main className="container relative mx-auto overflow-auto md:p-16 p-4 text-[#000000]">
 
       <section className="flex flex-col items-center space-y-8">
 
@@ -180,13 +180,11 @@ export default function Home() {
         </div>
 
         {/* About Me */}
-        <section className="flex flex-col items-stretch justify-center p-2 w-3xl space-y-1.5 border-gray-600 border-0 border-dashed">
+        <section className="flex flex-col items-stretch justify-center p-2 w-3xl space-y-1.5 border-gray-600 border-0 border-dashed hover:bg-gray-200 rounded cursor-pointer duration-200">
           <h1 className="text-2xl">About Me</h1>
           <p className="text-black/80">
-            I’m a backend developer with +2 years of experience designing and delivering scalable, high-performance services. My expertise spans Node.js, Golang, and microservices, with a strong focus on clean architecture, system reliability, and performance optimization. I thrive on solving complex production challenges—whether it’s reducing latency, improving deployment speed, or leading cross-team recovery efforts during outages.
-            <br />
-            <br />
-            I’ve successfully migrated monoliths to microservices, built real-time data pipelines, and authored architecture RFCs that shaped company-wide engineering standards. Beyond coding, I’m passionate about mentoring, improving workflows, and ensuring teams deliver predictably and efficiently.
+            A passionate software engineer looking for building reliable, maintainable, and high-performance services.
+            I work with Node.js and Golang to build scalable, maintainable systems that meet evolving business requirements. I thrive on solving complex problems, guiding architectural decisions, mentoring team members, and optimizing development processes for efficiency and reliability.
           </p>
         </section>
 
@@ -197,7 +195,7 @@ export default function Home() {
           {
             experiences.map((ex, idx) => {
               return (
-                <div key={idx} className="hover:bg-gray-200 rounded cursor-pointer duration-200 p-1">
+                <div key={idx} className="hover:bg-gray-200 rounded cursor-pointer duration-200 p-2">
                   <div className="flex items-stretch justify-between">
                     <a href={ex.link} target="_blank" rel="noopener noreferrer" className="flex text-lg text-blue-700 hover:underline">
                       {ex.company}
