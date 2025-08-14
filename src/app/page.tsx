@@ -1,5 +1,3 @@
-import Image from "next/image";
-
 const skills = [
   {
     category: "Languages & Frameworks",
@@ -123,7 +121,7 @@ export default function Home() {
                 title="Gmail"
                 className="flex items-center border-2 text-black px-4 rounded hover:bg-red-200 duration-300 cursor-pointer"
               >
-                <Image src="/assets/gmail.png" height={22} width={22} alt="Gmail" />
+                <img src="/assets/gmail.png" height={22} width={22} alt="Gmail" />
               </a>
 
               <a
@@ -131,7 +129,7 @@ export default function Home() {
                 title="Phone"
                 className="flex items-center border-2 text-black px-4 py-2 rounded hover:bg-indigo-200 duration-300 cursor-pointer"
               >
-                <Image src="/assets/phone.png" height={22} width={22} alt="Phone" />
+                <img src="/assets/phone.png" height={22} width={22} alt="Phone" />
               </a>
 
               <a
@@ -141,7 +139,7 @@ export default function Home() {
                 title="LinkedIn"
                 className="flex items-center border-2 text-black px-4 py-2 rounded hover:bg-green-200 duration-300 cursor-pointer"
               >
-                <Image src="/assets/linkedin.png" height={22} width={22} alt="LinkedIn" />
+                <img src="/assets/linkedin.png" height={22} width={22} alt="LinkedIn" />
               </a>
 
               <a
@@ -151,7 +149,7 @@ export default function Home() {
                 title="Github"
                 className="flex items-center border-2 gap-2 text-black px-4 py-2 rounded hover:bg-fuchsia-200 duration-300 cursor-pointer"
               >
-                <Image src="/assets/github.png" height={22} width={22} alt="Github" />
+                <img src="/assets/github.png" height={22} width={22} alt="Github" />
               </a>
 
               <a
@@ -161,7 +159,7 @@ export default function Home() {
                 title="Download CV"
                 className="flex items-center border-2 gap-2 text-black px-4 py-2 rounded hover:bg-amber-200 duration-300 cursor-pointer"
               >
-                <Image src="/assets/folder.png" height={22} width={22} alt="CV" />
+                <img src="/assets/folder.png" height={22} width={22} alt="CV" />
               </a>
 
               <a
@@ -171,13 +169,13 @@ export default function Home() {
                 title="Medium"
                 className="flex items-center border-2 gap-2 px-4 py-2 rounded hover:bg-blue-200 duration-300 cursor-pointer"
               >
-                <Image src="/assets/medium.png" height={22} width={22} alt="Medium" />
+                <img src="/assets/medium.png" height={22} width={22} alt="Medium" />
               </a>
             </div>
           </div>
 
           <div className="rounded overflow-hidden shadow shadow-gray-700">
-            <Image src="/avatar.png" height={200} width={200} alt="Avatar" />
+            <img src="/images/avatar.png" height={200} width={200} alt="Avatar" />
           </div>
         </div>
 
