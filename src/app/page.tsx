@@ -153,7 +153,7 @@ export default function Home() {
               </a>
 
               <a
-                href="/cv.pdf" // Replace with your actual CV file path or URL
+                href="/files/Alireza_Rezapour_CV.pdf"
                 target="_blank"
                 rel="noopener noreferrer"
                 title="Download CV"
